@@ -27,7 +27,7 @@ header {
   width: 100%;
   height: 60px;
   padding: 10px;
-  background: #222F3F; }
+  background: lavender; }
   header .is-logo {
     float: left;
     margin-right: 12px; }
@@ -52,12 +52,12 @@ header {
       padding-bottom: 7px; }
       header .input-group #q:focus {
         outline: none;
-        box-shadow: inset 0 0 0 1px #FFBE61; }
+        box-shadow: inset 0 0 0 1px lightblue; }
     header .input-group .input-group-btn button {
       height: 100%;
       padding: 0 30px;
       border: 0;
-      background: #FFBE61; }
+      background: lightblue; }
 
 aside {
   position: fixed;
@@ -337,3 +337,7 @@ aside {
   text-align: center;
   font-size: .8em;
   padding: 10px; }
+
+.pre-selected {
+  display: none;
+}

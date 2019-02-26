@@ -5,10 +5,7 @@ var search = instantsearch({
   appId: 'HQ2JTF16MK',
   apiKey: '678094efc0f2a1927f601e42ab17f244',
   indexName: 'per_posts_product',
-  searchParameters: {
-        facets: ['taxonomies.product_cat'],
-        facetsRefinements: {'taxonomies.product_cat': ['Manual Wheelchairs']}
-  },
+
   routing: true
 });
 
@@ -65,7 +62,6 @@ var facetTemplateColors =
 search.addWidget(
   instantsearch.widgets.hits({
     container: '#hits',
-    query: 'taxonomies.product_cat:"Power Wheelchair"',
     hitsPerPage: 4,
     templates: {
       empty: noResultsTemplate,
@@ -92,6 +88,20 @@ search.addWidget(
       next: 'Next page <i class="fa fa-angle-right fa-2x"></i>'
     },
     showFirstLast: false
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.hierarchicalMenu({
+    container: '#categories',
+    limit: 3,
+    attributes: [
+      'taxonomies_hierarchical.product_cat.lvl0'
+    ],
+    sortBy: ['name:asc'],
+    templates: {
+      item: menuTemplate
+    }
   })
 );
 
