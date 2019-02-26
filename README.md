@@ -1,3 +1,3 @@
 # instantsearch
 
-Testing Algolia instantsearch.js
+Testing Algolia's instantsearch.js
